@@ -23,27 +23,8 @@ module.exports = async function (req, res, next) {
         }
 
 }
-// -------------------------------------------------------------------------------------------
-// const jwt=require('jsonwebtoken')
-// const User = require('../schemas/userSchema')
 
-// module.exports = function (req, res, next){
-//     try{
-//         const token = req.header('authorization')
-//         if(!token){
-//             res.send('error to get token')
-//         }
-//         const checkToken = jwt.verify(token, 'hamadakun')
-//         if(!checkToken){
-//             throw new Error("This token not match")
-//         }
-//         const getUserById = User.findById({_id: checkToken._id})
-        
-//         next()
-//     }catch(err){
-//         res.statu(401).send('error happen in middleware')
-//     }
-// }
+// -------------------------------------------------------------------------------------------
 
 
 

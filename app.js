@@ -14,7 +14,7 @@ app.listen(port, () => {
     console.log(`this app use http://localhost:${3000}`);
 })
 app.use(cors())
-app.use(express.json()) 
+app.use(express.json())   
 
 
 

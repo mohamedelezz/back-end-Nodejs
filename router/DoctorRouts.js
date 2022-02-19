@@ -13,7 +13,7 @@ route.get('/:id', async (req, res) => {
     res.send(getAllDoctors)
 })
 
-route.post('/', async (req, res) => {
+route.post('/', middleWareToken, async (req, res) => {
     try {
         const newDoctors = new doctors(req.body)
         await newDoctors.save()
@@ -22,14 +22,14 @@ route.post('/', async (req, res) => {
     } catch (error) { res.send(error.message) }
 })
 
-route.delete('/:id', async (req, res) => {
+route.delete('/:id', middleWareToken, async (req, res) => {
     const deleteDoctor = await doctors.findByIdAndDelete(req.params.id)
     res.send({
         data: "Doctor has delated "
     })
 })
 
-route.patch('/:id', async (req, res) => {
+route.patch('/:id', middleWareToken, async (req, res) => {
     try {
         const deleteDoctor = await doctors.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
         res.send({
