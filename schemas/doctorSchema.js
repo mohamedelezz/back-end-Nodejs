@@ -35,7 +35,7 @@ const doctorSchema = new mongoose.Schema({
         required: true,
 
     },
-    available: Boolean
+    // available: Boolean
 
 })
 const Doctors = mongoose.model('Doctors', doctorSchema)
